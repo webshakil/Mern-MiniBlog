@@ -7,10 +7,10 @@ import postRoutes from './routes/posts.js';
 import userRouter from "./routes/user.js";
 const __dirname = path.resolve();
 
-
-
 const app = express();
 dotenv.config();
+
+if (process.env.NODE_ENV !== 'production') { require('dotenv').config() }
 
 //For deployment
 if ( process.env.NODE_ENV == "production"){
